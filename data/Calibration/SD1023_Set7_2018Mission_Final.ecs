@@ -1,0 +1,94 @@
+﻿#========================================================================================#
+#ECHOVIEW CALIBRATION SUPPLEMENT (.ECS) FILE (Simrad EK80, ES80, WBAT, EKAuto or Kongsberg EA640)#
+#                                 11/6/2018 09:08:25.8160                                #
+#========================================================================================#
+#       +----------+   +-----------+   +----------+   +-----------+   +----------+       #
+#       | Default  |-->| Data File |-->| Fileset  |-->| SourceCal |-->| LocalCal |       #
+#       | Settings |   | Settings  |   | Settings |   | Settings  |   | Settings |       #
+#       +----------+   +-----------+   +----------+   +-----------+   +----------+       #
+# - Settings to the right override those to their left.                                  #
+# - See the Help file page "About calibration".                                          #
+#========================================================================================#
+
+Version 1.00
+
+# A Detailed description of the following can be found on the ArcticEIS Git Wiki:
+# 38 kHz: Cu sphere calibration
+# - Beam pattern: Set7_Copper_PostDeployment.xml using data collected on 10/26/18 at AFSC dock
+# - NOTE: EBS VALUES CURRENTLY NOT CORRECTED FOR SOUND SPEED FROM TANK VALUES
+# - On Axis: Saildrone_Calibrations_Summer_2018.xlsx using data collected on 10/26/18 at AFSC Dock
+#
+# 200 kHz: WC sphere calibration
+# -On Axis: Saildrone_Calibrations_Summer_2018.xlsx using data collected in the post-deploymet calibration (10/24/18)
+#
+# Sound Speed
+# - Calculated from OS201701 CTD casts (see soundSpeed.ipynb in ArcticEIS Git)
+# - Entire 201701 survey region values: 1466.363268 <- THIS IS WHAT IS USED
+# - Just saildrone region: 1467.77236
+# - DEPLOYED SETTINGS: 1462.59 (S = 32, T = 4)
+
+
+#========================================================================================#
+#                                    FILESET SETTINGS                                    #
+#========================================================================================#
+
+# SoundSpeed = # (meters per second) [1400.00..1700.00]
+# TvgRangeCorrection = # [None, BySamples, SimradEx500, SimradEx60, BioSonics, Kaijo, PulseLength, Ex500Forced, SimradEK80, Standard]
+# TvgRangeCorrectionOffset = # (samples) [-10000.00..10000.00]
+
+
+#========================================================================================#
+#                                   SOURCECAL SETTINGS                                   #
+#========================================================================================#
+
+SourceCal T1 (channel 1)
+    # AbsorptionDepth = 0.000 # (meters) [0.000..10000.000]
+    # Acidity = 8.000 # (pH) [0.000..14.000]
+    # EffectivePulseLength = 0.339 # (milliseconds) [0.001..50.000]
+     EK60SaCorrection = 0.0000 # (decibels) [-99.9900..99.9900]# FROM 'Saildrone_Calibrations_Summer_2018.xlsx', 264037 on 10/26, Cu Sphere
+    # Frequency = 38.00 # (kilohertz) [0.01..10000.00]
+     MajorAxis3dbBeamAngle = 16.14  # (degrees) [0.00..359.99]# FROM 'Saildrone_Calibrations_Summer_2018.xlsx', 264037 on 10/26, Cu Sphere
+     MajorAxisAngleOffset = 0.03 # (degrees) [-9.99..9.99]# FROM 'Saildrone_Calibrations_Summer_2018.xlsx', 264037 on 10/26, Cu Sphere
+    # MajorAxisAngleSensitivity = 10.500000 # [0.100000..100.000000]
+     MinorAxis3dbBeamAngle = 15.68  # (degrees) [0.00..359.99]# FROM 'Saildrone_Calibrations_Summer_2018.xlsx', 264037 on 10/26, Cu Sphere
+     MinorAxisAngleOffset = -0.21 # (degrees) [-9.99..9.99]# FROM 'Saildrone_Calibrations_Summer_2018.xlsx', 264037 on 10/26, Cu Sphere
+    # MinorAxisAngleSensitivity = 10.500000 # [0.100000..100.000000]
+    # NumberOfTransducerSegments = 3 # [1..4]
+    # Salinity = 32.000 # (parts per thousand) [0.000..50.000]
+    # SamplingFrequency = 8.3330000 # (kilohertz) [0.0100000..1000.0000000]
+     SoundSpeed = 1466.363268 # (meters per second) [1400.00..1700.00] # FROM OS201701 (see soundSpeed.ipynb for details)
+    # Temperature = 4.000 # (degrees celsius) [-10.000..100.000]
+    # TransceiverImpedance = 10800.0 # (ohms) [0.0..1000000.0]
+    # TransceiverSamplingFrequency = 1499.9 # (kilohertz) [1.0..5000.0]
+     TransducerGain = 19.83 # (decibels) [1.0000..99.0000]# FROM 'Saildrone_Calibrations_Summer_2018.xlsx', 264037 on 10/26, Cu Sphere
+    # TransmittedPower = 250.00000 # (watts) [1.00000..30000.00000]
+    # TransmittedPulseLength = 0.512 # (milliseconds) [0.001..50.000]
+    # TvgRangeCorrection = SimradEK80 # [None, BySamples, SimradEx500, SimradEx60, BioSonics, Kaijo, PulseLength, Ex500Forced, SimradEK80, Standard]
+    # TwoWayBeamAngle = -12.500000 # (decibels re 1 steradian) [-99.000000..-1.000000]
+
+SourceCal T1 (channel 2)
+    # AbsorptionDepth = 0.000 # (meters) [0.000..10000.000]
+    # Acidity = 8.000 # (pH) [0.000..14.000]
+    # EffectivePulseLength = 0.427 # (milliseconds) [0.001..50.000]
+     EK60SaCorrection = 0.0500 # (decibels) [-99.9900..99.9900]# FROM 'Saildrone_Calibrations_Summer_2018.xlsx', 264037 on 10/24, WC Sphere
+    # Frequency = 200.00 # (kilohertz) [0.01..10000.00]
+    # MajorAxis3dbBeamAngle = 16.90 # (degrees) [0.00..359.99]
+    # MinorAxis3dbBeamAngle = 17.30 # (degrees) [0.00..359.99]
+    # NumberOfTransducerSegments = 1 # [1..4]
+    # Salinity = 32.000 # (parts per thousand) [0.000..50.000]
+    # SamplingFrequency = 8.3330000 # (kilohertz) [0.0100000..1000.0000000]
+     SoundSpeed = 1466.363268 # (meters per second) [1400.00..1700.00] # FROM OS201701 (see soundSpeed.ipynb for details)
+    # Temperature = 4.000 # (degrees celsius) [-10.000..100.000]
+    # TransceiverImpedance = 10800.0 # (ohms) [0.0..1000000.0]
+    # TransceiverSamplingFrequency = 1499.9 # (kilohertz) [1.0..5000.0]
+     TransducerGain = 19.8200 # (decibels) [1.0000..99.0000]# FROM 'Saildrone_Calibrations_Summer_2018.xlsx', 264037 on 10/24, WC Sphere
+    # TransmittedPower = 188.00000 # (watts) [1.00000..30000.00000]
+    # TransmittedPulseLength = 0.512 # (milliseconds) [0.001..50.000]
+    # TvgRangeCorrection = SimradEK80 # [None, BySamples, SimradEx500, SimradEx60, BioSonics, Kaijo, PulseLength, Ex500Forced, SimradEK80, Standard]
+    # TwoWayBeamAngle = -12.600000 # (decibels re 1 steradian) [-99.000000..-1.000000]
+
+
+#========================================================================================#
+#                                    LOCALCAL SETTINGS                                   #
+#========================================================================================#
+

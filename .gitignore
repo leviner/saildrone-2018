@@ -1,0 +1,27 @@
+# ignore raw files, EV and simrad index files
+*.raw
+*.raw.evi
+*.idx
+
+# ignore saildrone gps files and EV gps index files
+*.gps.csv
+*.gps.csv.evi
+
+# ignore HYCOM and portal/env files
+/data/Hycom
+/data/Env
+
+# ignore the EV and EV exports, but include the templates
+/data/EV/EVFiles
+
+# ignore actual catch data but keep descriptions
+/data/catchData/*.csv
+
+# ignore CTD data because it isn't public yet
+/data/ctdData
+
+# ignore calibration data folder
+/data/Calibration/Data
+
+__pycache__
+.ipynb_checkpoints
