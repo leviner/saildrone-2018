@@ -7,9 +7,11 @@
 *.gps.csv
 *.gps.csv.evi
 
-# ignore HYCOM and portal/env files
+# ignore HYCOM, NCEP, and portal/env files except the processed csvs
 /data/Hycom
-/data/Env
+/data/Env/*
+!/data/Env/processed
+/data/NCEP
 
 # ignore the EV and EV exports, but include the templates
 /data/EV/EVFiles
