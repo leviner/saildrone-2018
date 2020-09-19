@@ -2,6 +2,7 @@
 *.raw
 *.raw.evi
 *.idx
+*ffs_db
 
 # ignore saildrone gps files and EV gps index files
 *.gps.csv
