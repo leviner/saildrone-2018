@@ -1,7 +1,5 @@
 # Autonomous vehicle surveys indicate that flow reversals retain juvenile fishes in a highly advective high‐latitude ecosystem
 
-Robert Levine<sup>1</sup>
-
 ### Robert M. Levine<sup>1</sup>, Alex De Robertis<sup>2</sup>, Daniel Grünbaum<sup>1</sup>, Rebecca Woodgate<sup>1</sup>, Calvin W. Mordy<sup>3,4</sup>, Franz Mueter<sup>5</sup>, Edward Cokelet<sup>4</sup>, Noah Lawrence‐Slavas<sup>4</sup>, and Heather Tabisola<sup>3,4</sup>
 
 <sup>1</sup> School of Oceanography, University of Washington, Seattle, WA, USA. </br>
